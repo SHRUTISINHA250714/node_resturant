@@ -1,6 +1,14 @@
 const mongoose=require('mongoose');
 // Define the MongoDB connection URL
-const mongoURL='mongodb://localhost:27017/hotels'
+// const mongoURL='mongodb://localhost:27017/hotels'
+// const mongoURL='mongodb+srv://heyshruti68:s4TTUUopZOqZutjC@cluster0.gjoac.mongodb.net/'
+// mongoose.connect('mongodb+srv://heyshruti68:s4TTUUopZOqZutjC@cluster0.gjoac.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+//   ssl: true,
+//   tlsAllowInvalidCertificates: false
+// });
+require('dotenv').config();
+const mongoURL=process.env.MONGODB_URL;
+
 
 // Set up MongoDB connection
 mongoose.connect(mongoURL,{
